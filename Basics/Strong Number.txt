@@ -1,0 +1,33 @@
+#include<stdio.h>
+int fact(int num)
+{
+    int fact=1;
+    for(int i=1;i<=num;i++)
+        fact = fact*i;
+    return fact;
+}
+int strong(int num)
+{
+    int sum=0,digit,temp;
+    temp = num;
+    while(temp!=0)
+    {
+        digit = temp%10;
+        sum = sum + fact(digit);
+        temp/=10;
+    }
+    if(sum==num)
+        return 1;
+    else
+        return 0;
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    if(strong(num))
+        printf("Yes\n");
+    else
+        printf("No\n");
+    return 0;
+}

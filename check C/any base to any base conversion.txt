@@ -1,0 +1,32 @@
+#include<stdio.h>
+//any base to any base conversion
+int conversion(int num,int curr_base,int conv2_base)
+{
+    int temp,sum=0,digit,j=0,i;
+    int arr[20];
+    temp = num;
+    while(temp!=0)
+    {
+        digit = num%10;
+        sum+= digit*curr_base;
+        temp=temp/10;
+        curr_base*=curr_base;
+    }
+    while(sum!=0)
+    {
+        arr[j]= sum%conv2_base;
+        sum=sum/conv2_base;
+        j++;
+    }
+    int size = sizeof(arr)/sizeof(arr[0]);
+    for(i=size-1;i>=0;j--)
+        printf("%d ",arr[i]);
+}
+int main()
+{
+    int num,curr_base,conv2_base;
+    printf("Enter number, initial base and target base\n");
+    scanf("%d %d %d",&num,&curr_base,&conv2_base);
+    conversion(num,curr_base,conv2_base);
+    return 0;
+}

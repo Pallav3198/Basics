@@ -1,0 +1,20 @@
+#include<stdio.h>
+int o2d(int num)
+{
+    int i=1,decimal=0,digit;
+    while(num!=0)
+    {
+        digit = num%10;
+        decimal = decimal + digit*i;
+        num = num/10;
+        i=i*8;
+    }
+return decimal;
+}
+int main()
+{
+     int num;
+     scanf("%d",&num);
+     printf("%d",o2d(num));
+     return 0;
+}

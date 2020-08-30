@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int primeornot(int num)
+{
+    int i;
+    int flag=1;
+    for(i=1;i<sqrt(num);i++)
+        if(num%i==0)
+            flag=!flag;
+    return flag;
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    if(!primeornot(num))
+        printf("Prime Number");
+    else
+        printf("Not a prime number");
+    return 0;
+}

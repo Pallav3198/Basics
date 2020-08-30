@@ -1,0 +1,22 @@
+#include<stdio.h>
+int b2d(int num)
+{
+    int i=1,temp,digit,decimal=0;
+    temp = num;
+    while(temp!=0)
+    {
+        digit = temp%10;
+        decimal += digit*i;
+        temp = temp/10;
+        i*=2;
+    }
+    return decimal;
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    printf("Decimal %d",b2d(num));
+    return 0;
+}
+

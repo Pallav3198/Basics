@@ -1,0 +1,18 @@
+/* 
+if a number is divisible by 4 => Leap Year
+if a number is divisible by 400 => Leap Year
+if a number is divisible by 100 => Not a Leap Year
+*/
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+
+    int year;
+    scanf("%d",&year);
+    if((year%400==0)||(year%4==0 && year%100!=0))
+        printf("Leap Year");
+    else
+        printf("Not a Leap Year\n");
+    return 0;
+}

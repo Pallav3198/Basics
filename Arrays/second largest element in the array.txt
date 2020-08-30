@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<limits.h>
+int main()
+{
+    int arr[10],i,j,size;
+    int first=INT_MIN,second = INT_MIN;
+
+    printf("Enter size\n");
+    scanf("%d",&size);
+
+    printf("Enter elements\n");
+    for(j=0;j<size;j++)
+    {
+        scanf("%d",&arr[j]);
+    }
+    for(i=0;i<size;i++)
+    {
+        if(arr[i]>first)
+        {
+            second = first;
+            first = arr[i];
+        }
+        else if(arr[i]>second && arr[i]!=first)
+            second = arr[i];
+    }
+    if(second==INT_MIN)
+        printf("No second largest element in the array\n");
+    else
+        printf("| %d |",second);
+    return 0;
+
+}

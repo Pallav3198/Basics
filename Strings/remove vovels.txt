@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+int checkV(char X)
+{
+        if(isalpha(X))
+        {
+            if(X=='a'|| X=='e' || X=='i'|| X=='o' || X=='u' || X=='A' || X=='E' || X=='I' || X=='O' || X=='U')
+                return 1;
+            else
+                return 0;
+        }
+
+}
+int main()
+{
+    char str[20],b[20];
+    int i=0,j=0;
+    printf("Enter the string\n");
+    gets(str);
+    while(str[i]!='\0')
+    {
+        if(!checkV(str[i]))
+        {
+            b[j]= str[i];
+            j++;
+        }
+        i++;
+    }
+    b[j] = '\0';
+    strcpy(str,b);
+    printf("After Removal\n %s",str);
+    return 0;
+}

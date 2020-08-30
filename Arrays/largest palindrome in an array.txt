@@ -1,0 +1,54 @@
+
+#include<stdio.h>
+int palindrome(int num)
+{
+    int temp,sum=0,digit;
+    temp=num;
+    while(temp!=0)
+    {
+        digit = temp%10;
+        sum = sum*10+ digit;
+        temp/=10;
+    }
+    if(sum==num)
+        return 1;
+    else
+        return 0;
+}
+int sort(int arr[],int size)
+{
+    int i,j,temp;
+    for(j=0;j<size-1;j++)
+    {
+    for(i=0;i<size-1;i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+            temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+    }
+    }
+    return 0;
+}
+int main()
+{
+    int size,arr[20],i,j;
+    printf("Enter Size\n");
+    scanf("%d",&size);
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    sort(arr,size);
+    for(j=size-1;j>=0;j--)
+    {
+        if(palindrome(arr[j]))
+        {
+            printf("Largest Palindrome is %d",arr[j]);
+            break;
+        }
+    }
+    return 0;
+}

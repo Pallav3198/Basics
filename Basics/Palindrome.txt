@@ -1,0 +1,27 @@
+#include<stdio.h>
+int palindrome(int num)
+{
+    int sum=0,digit;
+    int temp = num;
+    while(temp>0)
+    {
+        digit = temp%10;
+        sum = sum*10 + digit;
+        temp=temp/10;
+    }
+    if(num==sum)
+        return 1;
+    else
+       return 0;
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    if(palindrome(num))
+        printf("Yes\n");
+    else
+        printf("No\n");
+    return 0;
+}
+

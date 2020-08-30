@@ -1,0 +1,35 @@
+#include<stdio.h>
+// finding the number of digits
+int nod(int num)
+{
+    int count = 0;
+    while(num>0)
+    {
+        num = num/10;
+        count++;
+    }
+    return count;
+}
+//finding the digits
+int digits(int num)
+{
+    int arr[10],digit,i=0,j;
+    while(num>0)
+    {
+        digit = num%10;
+        arr[i] = digit;
+        i++;
+        num = num/10;
+    }
+    for(j=i-1;j>0;j--)
+        printf("|%d|\t",arr[j]);
+}
+int main()
+{
+    int num,*ptr,i;
+    scanf("%d",&num);
+    printf("\nnumber of digits: %d\n",nod(num));
+    printf("The digits in the array are\n");
+    digits(num);
+    return 0;
+}

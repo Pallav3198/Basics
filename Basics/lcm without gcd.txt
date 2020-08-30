@@ -1,0 +1,16 @@
+#include<stdio.h>
+int lcm(int a,int b)
+{
+    int L=a>b?a:b;
+    for(L;L<a*b;L+=L)
+        if(L%a==0&&L%b==0)
+          break;
+    return L;
+}
+int main()
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    printf("LCM is %d",lcm(a,b));
+    return 0;
+}
